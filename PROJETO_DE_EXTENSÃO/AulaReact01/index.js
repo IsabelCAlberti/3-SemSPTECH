@@ -58,32 +58,37 @@ ReactDOM.createRoot(container).render(<Titulos />);*/
 
 
 
-var container = document.getElementById("root"); 
+/*var container = document.getElementById("root"); 
 function Participante(props) {
     const [numero, setNumero] = React.useState(0); 
-        function votar() { setNumero(numero + 1); }  
-            return ( <> <div> <h2>{props.nome}</h2> 
-                            <h3>{numero}</h3> 
-                            <button onClick={votar}>Votar</button> 
-                        </div> </> ); 
+        function votar() { 
+            setNumero(numero + 1); 
+        }  
+    return ( <> <div> <h2>{props.nome}</h2> 
+                      <h3>{numero}</h3> 
+                      <button onClick={votar}>Votar</button> 
+                </div> </> ); 
 }  
     function Votacao() { 
-        return ( <> <h1>Participantes</h1> <Participante nome="Blue Pen" /> 
+        return ( <> <h1>Participantes</h1> 
+                       <Participante nome="Blue Pen" /> 
                        <Participante nome="Blue Red" /> 
                        <Participante nome="Blue Orange" /> </> )
     }  
-ReactDOM.createRoot(container).render(<Votacao />);
+ReactDOM.createRoot(container).render(<Votacao />);*/
 
 
 
 
-/*var container = document.getElementById("root"); 
-function BotaoContador() {const [contador, setContador] = React.useState(0);       
-    return (<div> <p>Você clicou {contador} vezes</p> 
+var container = document.getElementById("root"); 
+function BotaoContador() {
+    const [contador, setContador] = React.useState(0);       
+    return (<div> 
+            <p>Você clicou {contador} vezes</p> 
             <button onClick={() => setContador(contador + 1)}>  Clique aqui </button>
-            </div>     );   
+            </div> );   
 }
-ReactDOM.createRoot(container).render(<BotaoContador/>)*/
+ReactDOM.createRoot(container).render(<BotaoContador/>)
 
 
 

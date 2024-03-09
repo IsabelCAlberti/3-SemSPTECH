@@ -43,4 +43,20 @@ public class MedicamentoController {
         }
         return ResponseEntity.status(404).build();
     }
+
+    @DeleteMapping("/medicamentos/{indice}")
+    public ResponseEntity<String> excluirMedicamento(@PathVariable int indice) {
+        if (indice >= 0 && indice < medicamentos.size()) {
+            medicamentos.remove(indice);
+            return ResponseEntity.noContent().build(); // 204 No Content
+        }
+        return ResponseEntity.status(404).build();
+    }
+
+    @GetMapping("/medicamentos/controlados")
+            public ResponseEntity<List<Medicamentos>> pegarNomeMedicamentosControlados(){
+        List<Medicamentos> medicamentoComReceita = medicamentos.stream()
+                                                                .filter(medicamento -> medicamento.getPrecisaReceita()).toList();
+            return ResponseEntity.status(200).body(medicamentoComReceita);
+            }
 }
