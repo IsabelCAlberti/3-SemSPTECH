@@ -23,27 +23,76 @@ public class main {
         // Bubble Sort
         for (int i = 0; i < vetorLotacao.length - 1; i++) {
             for (int j = 1; j < vetorLotacao.length - i; j++) {
-                if (vetorLotacao[j - 1].getLotacao() > vetorLotacao[j].getLotacao()) {
-                    Estadio aux = vetorLotacao[j - 1];
-                    vetorLotacao[j - 1] = vetorLotacao[j];
-                    vetorLotacao[j] = aux;
+                if (vetorLotacao[j - 1] != null && vetorLotacao[j] != null) {
+                    if (vetorLotacao[j - 1].getLotacao() > vetorLotacao[j].getLotacao()) {
+                        Estadio aux = vetorLotacao[j - 1];
+                        vetorLotacao[j - 1] = vetorLotacao[j];
+                        vetorLotacao[j] = aux;
+                    }
                 }
             }
-        }
-        // Selection Sort
-        for (int primeiro = 0; primeiro < vetorLotacao.length; primeiro++) {
-            int indMenor = primeiro;
-            for (int segundo = primeiro + 1; segundo < vetorLotacao.length; segundo++) {
-                if (vetorLotacao[segundo].getLotacao() < vetorLotacao[indMenor].getLotacao()) {
-                    indMenor = segundo;
-                }
-            }
-            Estadio aux = vetorLotacao[primeiro];
-            vetorLotacao[primeiro] = vetorLotacao[indMenor];
-            vetorLotacao[indMenor] = aux;
         }
 
+        //ORDEM DECRESCENTE
+        // Bubble Sort
+        for (int i = 0; i < vetorLotacao.length - 1; i++) {
+            for (int j = 1; j < vetorLotacao.length - i; j++) {
+                if (vetorLotacao[j - 1] != null && vetorLotacao[j] != null) {
+                    if (vetorLotacao[j - 1].getLotacao() > vetorLotacao[j].getLotacao()) {
+                        Estadio aux = vetorLotacao[j - 1];
+                        vetorLotacao[j - 1] = vetorLotacao[j];
+                        vetorLotacao[j] = aux;
+                    }
+                }
+            }
+        }
+
+
+        // Selection Sort
+        for (int primeiro = 0; primeiro < vetorLotacao.length; primeiro++) {
+            int indMaior = primeiro;
+            for (int segundo = primeiro + 1; segundo < vetorLotacao.length; segundo++) {
+                if (vetorLotacao[segundo] != null && vetorLotacao[indMaior] != null) {
+                    if (vetorLotacao[segundo].getLotacao() > vetorLotacao[indMaior].getLotacao()) {
+                        indMaior = segundo;
+                    }
+                }
+            }
+            if (vetorLotacao[indMaior] != null) {
+                Estadio aux = vetorLotacao[primeiro];
+                vetorLotacao[primeiro] = vetorLotacao[indMaior];
+                vetorLotacao[indMaior] = aux;
+            }
+        }
+
+
+        //ORDEM DECRESCENTE
+        // Selection Sort
+        for (int primeiro = 0; primeiro < vetorLotacao.length; primeiro++) {
+            int indMaior = primeiro;
+            for (int segundo = primeiro + 1; segundo < vetorLotacao.length; segundo++) {
+                if (vetorLotacao[segundo] != null && vetorLotacao[indMaior] != null) {
+                    if (vetorLotacao[segundo].getLotacao() > vetorLotacao[indMaior].getLotacao()) {
+                        indMaior = segundo;
+                    }
+                }
+            }
+            if (vetorLotacao[indMaior] != null) {
+                Estadio aux = vetorLotacao[primeiro];
+                vetorLotacao[primeiro] = vetorLotacao[indMaior];
+                vetorLotacao[indMaior] = aux;
+            }
+        }
+
+        // Pesquisa Binária
+        int indice = pesquisaBinaria(vetorLotacao);
+        if (indice != -1) {
+            System.out.println("Estádio encontrado na posição: " + indice);
+        } else {
+            System.out.println("Estádio não encontrado.");
+        }
     }
+
     //Pesquisa Binária
     public static int pesquisaBinaria(Estadio[] vetorLotacao) {
         int indInf = 0;
@@ -60,7 +109,5 @@ public class main {
         }
         return -1;
     }
-
-
-    }
+}
 

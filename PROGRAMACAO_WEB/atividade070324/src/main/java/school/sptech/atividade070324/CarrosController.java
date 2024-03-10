@@ -67,10 +67,21 @@ public class CarrosController {
         return ResponseEntity.status(404).build();
     }
 
-    /*@PatchMapping("/{id}/placa)
-    public ResponseEntity<Carro> emplacarCarro(@PathVariable UUID id, @RequestBody String novoMotivoMudancaPlaca) {
+    @PatchMapping("/{id}/emplacamento")
+    public ResponseEntity<Carro>
+    emplacar(@PathVariable UUID id, @RequestBody @Valid PathEmplacamento emplacamento) {
 
+        for (int i = 0; i < carros.size(); i++) {
+            Carro carro = carros.get(i);
+            if (carro.getId().equals(id)) {
+                carro.setPlaca(emplacamento.getNovaPlaca());
+                carro.setMotivoMudancaPlaca(emplacamento.getMotivo());
+                return ResponseEntity.status(200).body(carro);
+            }
+        }
 
-}*/
+        return ResponseEntity.status(404).build();
+    }
+
 }
 

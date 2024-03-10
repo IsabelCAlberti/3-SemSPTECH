@@ -12,6 +12,7 @@ public class Carro {
     @NotBlank
     private String modelo;
     private String cor;
+    @NotBlank
     @Size(min = 7, max = 8)
     private String placa;
     @Min(1960)
