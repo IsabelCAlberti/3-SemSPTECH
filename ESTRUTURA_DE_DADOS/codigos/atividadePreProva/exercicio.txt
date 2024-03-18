@@ -1,0 +1,52 @@
+O projeto não será entregue, mas você deverá copiar e colar partes do código para esta questão no Moodle.
+
+Faça upload do print do diagrama de classes.
+
+Leia atentamente todo o enunciado antes de começar a codificar!
+
+Leia também os itens (a) a (e) que descrevem o código a ser colado no Moodle, antes de começar a codificar!
+
+Atenção para o padrão de nomenclatura ao codificar!
+
+
+
+Imagine o cenário de uma empresa com várias divisões operacionais. Todas as divisões apresentam uma receita, sobre a qual a empresa contribui com um valor para um fundo de sustentabilidade. Além disso, os sócios da empresa recebem um pró-labore e sobre esse pró-labore é contribuído um valor para o mesmo fundo.
+
+Suponha que no sistema da empresa deve ter uma classe ContratoServico (como, por exemplo, um serviço de consultoria) e uma classe ContratoProduto (como, por exemplo, um software vendido por licença).
+
+A classe ContratoServico deve ter os atributos: código, nome, valor, quantidadeContratosFechados, um método getReceita() e um método getContribuicaoSustentabilidade(), que calcula e retorna a contribuição para o fundo de sustentabilidade do serviço, que é 18% da receita. A receita desse serviço é calculada multiplicando o valor pela quantidade de contratos fechados.
+
+A classe ContratoProduto deve ter os atributos: código, nome, valor, quantidadeLicencasVendidas, um método getReceita() e um método getContribuicaoSustentabilidade(), que calcula e retorna a contribuição para o fundo de sustentabilidade do produto, que é 13% da receita. A receita desse produto é calculada multiplicando o valor pela quantidade de licenças vendidas.
+
+Suponha também, que neste mesmo sistema, deve haver uma classe Socio, com atributos nome, proLabore e um método getContribuicaoSustentabilidade(), que calcula e retorna a contribuição para o fundo de sustentabilidade do sócio, que é 24% do seu pró-labore.
+
+Neste sistema, também há uma classe ControleSustentabilidade, que tem como objetivo controlar o total contribuído ao fundo de sustentabilidade, considerando os produtos, serviços e os sócios. Essa classe disponibiliza um método que retorna o total contribuído, considerando os produtos, serviços e os sócios. Para fazer esse cálculo, essa classe deseja manter em ArrayList os objetos correspondentes a produtos, serviços e sócios.
+
+Pela descrição acima, as classes ContratoServico , ContratoProduto e Socio apresentam um método de mesmo nome. Com base no que estudamos, qual a melhor forma de “forçar” que essas classes implementem o método getContribuicaoSustentabilidade()? Interface ou classe abstrata? Não precisa escrever a resposta.
+
+As classes ContratoServico e ContratoProduto apresentam um método getReceita(). Qual a melhor forma de "forçar" que essas 2 classes implementem o método getReceita()? Interface ou classe abstrata?
+
+Implemente a sua solução de acordo com a sua resposta e também de forma que demonstre a reutilização de código, grande vantagem da POO. Você deverá implementar as classes descritas acima com os atributos encapsulados, o construtor, e o toString(), sendo que o toString() deve retornar também o valor da contribuição para a sustentabilidade.
+
+Implemente também a classe abstrata e/ou interface que julgar necessário.
+
+Não se esqueça de implementar a classe ControleSustentabilidade, com os atributos e métodos que julgar necessário.
+
+A classe ControleSustentabilidade deve ter:
+
+o método que adiciona objetos à lista,
+o método que calcula e retorna o total de contribuições,
+e também o método que exibe todos os objetos que têm contribuição.
+Implemente também nesse projeto uma classe executável. Crie objetos das classes criadas e chame os seus métodos.
+
+
+Essa questão possui um espaço para envio de arquivo, onde deve ser enviado o diagrama de classes e um espaço de texto, copie e cole seu código de acordo com os itens descritos abaixo:
+
+(a) Se julgou que deve ter interface ou classe abstrata, copie e cole o código da interface ou classe abstrata no quadro abaixo. Se julgou que deve ter os 2, cole o código dos 2.
+
+(b) Escolha UMA (APENAS UMA) das classes concretas que implementa um ou 2 métodos abstratos e copie e cole seu código no quadro abaixo.
+
+(c) Tirando a classe concreta do item (b), copie e cole apenas os métodos abstratos das outras 2 classes concretas. Coloque o nome da classe e em seguida o código do método ou dos métodos (que são implementação do método abstrato)
+(d) Copie e cole o código da classe que agrega.
+
+(e) Copie e cole instruções do main de criação de objetos (instâncias) das classes concretas.

@@ -41,18 +41,5 @@ public class Ordenacao {
        }
    }
 
-    public static void main(String[] args) {
-        int[] vetor = {4,7,5,2,8,1,6,3};
-        int[] vetor02 = {4,7,5,2,8,1,6,32,3,45,61};
-
-
-        selectionSort(vetor);
-        System.out.println("Selection Sort");
-        exibirVetorDeInteiro(vetor);
-
-        System.out.println("Selection Sort Otimizado");
-        selectionSortOtimizado(vetor02);
-        exibirVetorDeInteiro(vetor02);
-    }
 }
 
