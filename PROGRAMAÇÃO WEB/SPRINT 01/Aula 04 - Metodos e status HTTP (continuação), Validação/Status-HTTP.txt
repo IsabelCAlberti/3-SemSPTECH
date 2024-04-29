@@ -1,0 +1,12 @@
+
+Listagem geral de um determinado recurso sem resultado: HTTP 204 No Content
+Sem permissão: HTTP 403 Forbidden
+Criar algo com sucesso: HTTP 201 Created
+Pesquisar um recurso por ID e encontrar: HTTP 200 OK
+Cenário não mapeado no servidor ocasionando erro (ex. NullPointerException): HTTP 500 Internal Server Error
+Remover algo com sucesso: HTTP 204 No Content
+Listagem geral de um determinado recurso com resultado: HTTP 200 OK
+Ao enviar parâmetro conflitante (unicidade): HTTP 409 Conflict
+Pesquisar um recurso por ID e não encontrar: HTTP 404 Not Found
+Sem autorização: HTTP 401 Unauthorized
+Espero que isso ajude! Se você tiver mais perguntas, fique à vontade para perguntar
